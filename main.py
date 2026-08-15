@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import random
+import os
 
 app = Flask(__name__)
 
@@ -20,4 +21,6 @@ def login():
 def chat(canal_id):
     return render_template("dashboard.html", id_do_canal=canal_id)
 
-app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
