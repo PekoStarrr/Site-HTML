@@ -4,9 +4,14 @@ import os
 
 app = Flask(__name__)
 
+# Criamos nossa própria contagem de visitas
+quantidade_visitas = 0
+
 @app.route("/")
 def home():
-    return render_template("login.html")
+    global quantidade_visitas
+    quantidade_visitas += 1  # Toda vez que alguém abrir a página, soma 1!
+    return render_template("login.html", visitas=quantidade_visitas)
 
 @app.route("/login", methods=["POST"])
 def login():
