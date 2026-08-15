@@ -53,10 +53,10 @@
         .then(res => res.json())
         .then(res => {
             document.getElementById('contador').innerText = res.value;
-        })
-        .catch(err => {
-            document.getElementById('contador').innerText = "1"; // Se der erro, mostra 1
-        });
+        <!-- Nosso Próprio Contador que aceita qualquer clique -->
+<div style="background: #111; color: #00ff00; padding: 10px; border-radius: 5px; text-align: center; font-family: monospace; margin-top: 20px; font-size: 18px; border: 1px solid #00ff00; width: 250px; margin-left: auto; margin-right: auto;">
+    👁️ VISITAS: {{ visitas }}
+
 </script>
 
 </html> 
