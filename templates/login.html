@@ -39,5 +39,25 @@
     <h3> <p> Você coloca o caminho ate la e pronto, tudo feio, agora o alt e apenas o nome da sua image ... </p> </h3>
 
     <h1> <p> Futuramente colocaremos mais estudos aqui! =3 </p> </h1>
+    <!-- Contador de Visitas Lindo -->
+<div style="text-align: center; margin-top: 20px;">
+    <img src="https://visitorbadge.io" alt="Contador">
+</div>
+    
+<div style="background: #111; color: #00ff00; padding: 10px; border-radius: 5px; text-align: center; font-family: monospace; margin-top: 20px;">
+    👁️ Visitas no site: <span id="contador">Carregando...</span>
+</div>
+
+<script>
+    // Esse código conversa com um servidor que guarda o número de acessos
+    fetch('https://countapi.xyz')
+        .then(res => res.json())
+        .then(res => {
+            document.getElementById('contador').innerText = res.value;
+        })
+        .catch(err => {
+            document.getElementById('contador').innerText = "1"; // Se der erro, mostra 1
+        });
+</script>
 
 </html> 
